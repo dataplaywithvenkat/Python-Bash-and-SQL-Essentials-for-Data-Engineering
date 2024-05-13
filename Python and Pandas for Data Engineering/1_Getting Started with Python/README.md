@@ -330,6 +330,33 @@ A value automatically assigned to a parameter if no argument is passed for that 
 ### Code Block
 The lines of code associated with and controlled by a programming statement. Indented under the statement.
 
+```python
+# Function with two parameters 
+def add_nums(num1, num2):
+    sum = num1 + num2
+    return sum
+
+# Call function using parameters  
+result = add_nums(5, 3)
+print(result)
+
+# Function with default parameter
+def hello(name="John"):
+    print("Hello " + name)
+
+hello() # Uses default name 
+hello("Jane") # Overrides default
+
+# Function with code block
+def print_lines():
+    print("Line 1")
+    print("Line 2")
+    print("Line 3")
+    
+print_lines()
+
+```
+
 
 ## Compound Statements in Python
 
