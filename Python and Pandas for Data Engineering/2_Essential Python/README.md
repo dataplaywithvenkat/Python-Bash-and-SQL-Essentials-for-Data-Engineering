@@ -1,5 +1,4 @@
 ## Introduction to Python Essentials
-• Preview module
 
 ## Sequences in Python
 
