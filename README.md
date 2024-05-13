@@ -1,24 +1,49 @@
-## Introduction to Python Development Environments
-• Preview module
+### Introduction to Python Packaging and Command-Line Tools
 
-## Introduction to Vim Normal Mode
+### Introduction to Building Command-Line Tools
 
-## Switching from Normal to Insert and Visual Modes in Vim
+### Getting Started with Python Projects
 
-## Working with the Vim Command Line
+### Overview of Command-Line Tool Frameworks
 
-## Vim Configuration
+### Using Click to Build a Command-Line Tool
 
-## Introduction to Visual Studio Code
+### Exploring Advanced Command-Line Tool Features
 
-## Setting Up Visual Studio Code
+### Recap of Building Command-Line Tools
 
-## Debugging Visual Studio Code
+### Introduction to Packaging and Distributing your Python Project
 
-## What is Version Control?
+### Introduction to Python Packaging
 
-## Introduction to Git and Git Concepts
+### Working with Python Setup Tools
 
-## Version Control with GitHub
+### Uploading to a Python Registry
 
-## Summary of Python and Pandas for Data Engineering
+### Recap of Packaging and Distributing your Python Project
+
+### Introduction to Continuous Integration for Command-Line Tools
+
+### Introduction to Linting
+
+### Automating Testing with GitHub Actions
+
+### Automating Publishing of your Python Project
+
+### Recap of Continuous Integration for Command-Line Tools
+
+### Introduction
+
+### Setting up your development environment for Command-line development
+
+### Your first Command-line tool in Rust
+
+### Working with user input: arguments and options
+
+### Expanding your tool's functionality with modules and libraries
+
+### Managing output: logging, errors, and panics
+
+### Optimizing your Command-line tools: Performance and best practices
+
+### Big O Notation-Final Challenge Walkthrough
