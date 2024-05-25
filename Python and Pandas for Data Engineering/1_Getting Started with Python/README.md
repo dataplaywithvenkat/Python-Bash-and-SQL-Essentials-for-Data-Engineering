@@ -560,4 +560,42 @@ else:
 
 ## While Loops in Python
 
+In this lesson, you will learn the `while` loop syntax, the `break` statement, and the importance of supplying and guaranteeing an exit condition. There are two compound statement types which are known as loops. These are `while` loops and `for` loops.
 
+## While Loop Syntax
+
+The controlling statement in a `while` loop consists of the keyword `while` followed by an expression.
+
+```python
+# Basic while loop example
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+```
+The while loop will repeatedly execute the code block as long as the controlling expression is True. Generally, you use a variable and change its value in the code block so that eventually, the expression evaluates to False.
+
+## Break Statement
+
+A break statement will break the execution of the loop.
+
+```python
+# While loop with break statement
+count = 0
+while True:
+    print(count)
+    count += 1
+    if count == 3:
+        break  # Loop stops when count equals 3
+```
+Break statements are generally used in combination with nested if statements.
+
+```python
+# While loop with break and if statement
+count = 0
+while count < 10:
+    print(count)
+    count += 1
+    if count == 3:
+        break  # Loop stops when count equals 3
+```
