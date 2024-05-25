@@ -359,10 +359,205 @@ print_lines()
 
 
 ## Compound Statements in Python
+# Evaluating to True or False
 
+Python has a number of operations that evaluate as one of the special values `True` or `False`. These include comparison operations, boolean operations, and object evaluations.
 
-## If Statements in Python
+## Comparison Operations
+
+Comparison can be made either by value or identity. Comparing by value is more generalized than comparison by identity. The comparison operators that compare by value are:
+
+- `==` Equals
+- `!=` Not Equals
+- `<` Less Than
+- `<=` Less Than or Equal
+- `>` Greater Than
+- `>=` Greater Than or Equal
+
+In most cases, two objects that are of different types will always evaluate as not equal. For example, the comparison `1 == 'b'` will evaluate as `False`, and `1 != 'b'` will evaluate as `True`. One notable exception to this is numeric types, such as integers and floating-point numbers. The comparison `1 == 1.0` will evaluate to `True`, and `1 != 1.0` will evaluate to `False`.
+
+Run the code below to see the results of some equality comparisons. You can also try changing the values and running it again.
+
+```python
+# Example equality comparisons
+print(1 == 'b')   # False
+print(1 != 'b')   # True
+print(1 == 1.0)   # True
+print(1 != 1.0)   # False
+
+# Try more comparisons
+print(10 < 20)    # True
+print(10 <= 10)   # True
+print(5 > 3)      # True
+print(5 >= 8)     # False
+
+```
+The order comparisons, those that test greater or less than values, will generally raise an error if the objects compared are of different types. A notable exception, again, is numeric types. The comparison `3.0 >= 2` will result in `True`. The order of objects depends on the type of objects being considered. For example, text (type string) uses lexicographic order and numeric types use numeric order.
+
+Order comparison can be chained with multiple operators. For example, `1 < 2 <= 3` will result in `True`. Try running the examples below:
+
+```python
+# Example order comparisons
+print(3.0 >= 2)         # True
+print('apple' < 'bat')  # True
+print('car' > 'bat')    # True
+
+# Chained comparisons
+print(1 < 2 <= 3)       # True
+print(1 < 2 > 1)        # True
+print(3 > 2 < 4)        # True
+
+# Try more comparisons
+print(5 <= 5 < 6)       # True
+print(7 >= 8 < 10)      # False
+print('abc' < 'abcd')   # True
+
+```
+The comparison operators which compare by identity are `is` and `is not`. They are most commonly used to compare against the special object `None`.
+
+```python
+# Example identity comparisons
+a = None
+b = None
+c = 5
+
+print(a is None)        # True
+print(b is None)        # True
+print(c is None)        # False
+
+print(a is not None)    # False
+print(c is not None)    # True
+
+# Try more comparisons
+x = []
+y = x
+z = []
+
+print(x is y)           # True (both x and y refer to the same object)
+print(x is z)           # False (x and z refer to different objects, even though they are both empty lists)
+
+d = 10
+e = 10
+print(d is e)           # True (integers with the same value often refer to the same object in memory)
+```
+## Membership Operations
+
+Some objects in Python can contain others. For example, the word `"Henry"` (of type string) contains the letter `"r"` (also a string). The `in` operator tests for this type of membership. The expression `"r" in "Henry"` will return `True`, and `"b" in "Henry"` will return `False`.
+
+```python
+# Example membership operations
+print("r" in "Henry")   # True
+print("b" in "Henry")   # False
+
+# Try more membership tests
+print("e" in "Henry")   # True
+print("H" in "Henry")   # True
+print("z" in "Henry")   # False
+print("Hen" in "Henry") # True
+
+# Membership in other types
+print(2 in [1, 2, 3])   # True
+print(4 in [1, 2, 3])   # False
+print("apple" in ["apple", "banana", "cherry"]) # True
+print("pear" in ["apple", "banana", "cherry"])  # False
+```
+## Boolean Operations
+
+Boolean operations are based on boolean math, which you may have learned in a mathematics or philosophy course. The operators are `and`, `or`, and `not`. The first two take two operands, the last one takes one operand. 
+
+- The `and` operator returns `True` if both of its operands evaluate as `True` and `False` if either evaluates to `False`.
+- The `or` operator evaluates to `True` if either of its operands evaluates as `True` and `False` if they are both `False`.
+- The `not` operator returns `False` if its operand evaluates to `True` and `True` otherwise.
+
+You can make more complex logical operations by nesting boolean operations in parentheses. The expression `(False and False) or (not False)` evaluates to `True`, as `not False` is `True`.
+
+```python
+# Example boolean operations
+print(True and True)    # True
+print(True and False)   # False
+print(False or True)    # True
+print(False or False)   # False
+print(not True)         # False
+print(not False)        # True
+
+# Complex boolean operation
+print((False and False) or (not False))  # True
+
+# Try more boolean operations
+print((True or False) and (not False))   # True
+print((True and False) or (not True))    # False
+print(not (False or True))               # False
+print((not (True and True)) or (False))  # False
+```
+## Object Evaluations
+
+All objects (everything) in Python evaluate as `True` or `False`. This means you can use them in places where you would test for `True` or `False`, such as in Boolean operations. Generally, most Python objects evaluate as `True`. The exceptions are:
+
+- Numeric types that equal zero, such as `0` or `0.0`.
+- The constants `False` and `None`.
+- Anything that has a length of zero. This includes the empty string, `""`.
+
+```python
+# Example object evaluations
+print(bool(0))          # False
+print(bool(0.0))        # False
+print(bool(False))      # False
+print(bool(None))       # False
+print(bool(""))         # False
+print(bool([]))         # False
+print(bool({}))         # False
+
+# Objects that evaluate to True
+print(bool(1))          # True
+print(bool(3.14))       # True
+print(bool(True))       # True
+print(bool("Hello"))    # True
+print(bool([1, 2, 3]))  # True
+print(bool({"key": "value"})) # True
+```
+
+# If, Else, Elif Statements in Python
+
+In this lesson, you will learn the syntax of an `if` statement, the `else` keyword, and `elif` blocks. Let's look at `if` statements in a Jupyter Notebook. A notebook is composed of cells.
+
+## If Statements
+
+We can write multiple statements in a code cell, much as you would in a file, but then we can execute that code cell and get the output right away, much like in an interactive session. The `if` statement uses the keyword `if` followed by an expression. If that expression evaluates to `True`, then the controlled code block is executed; if it evaluates to `False`, then that block is skipped. Here, our expression is actually the keyword `True` or the constant `True`. We can see if we execute it, that both the control block and the code after the `if` statement are executed.
+
+## Else Keyword
+
+If the expression evaluates to `False`, then the controlled code block is skipped. The `else` keyword is used to have an alternative code block to the main controlled one. Basically, this is executed if the expression controlling the first code block is `False`. Here we have a variable named `score`, and we say that if that score is greater than three, we run the first control block; in all other cases, we'll run the second control block, which is controlled by the `else` statement.
+
+```python
+# If and else example
+score = 1
+if score > 3:
+    print("Score is greater than three.")
+else:
+    print("Score is three or less.")  # This block is executed because score is 1
+
+score = 4
+if score > 3:
+    print("Score is greater than three.")  # This block is executed because score is 4
+else:
+    print("Score is three or less.")
+```
+## Elif Blocks
+
+We can nest if statements within the else context to have more control over creating alternatives. Here we have a nested if statement that says if the variable is greater than three, it will print this message.
+
+```python
+# Nested if example
+score = 3
+if score > 3:
+    print("Score is greater than three.")
+else:
+    if score == 3:
+        print("Score is exactly three.")
+    else:
+        print("Score is less than three.")  # This block is executed because score is 3
+```
 
 ## While Loops in Python
 
-## Functions in Python
+
