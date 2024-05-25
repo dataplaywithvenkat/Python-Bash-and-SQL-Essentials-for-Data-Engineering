@@ -599,3 +599,18 @@ while count < 10:
     if count == 3:
         break  # Loop stops when count equals 3
 ```
+
+## Exit Condition
+
+It is important to ensure that loops have an exit condition. This can be when the expression for the loop evaluates to False or when a break statement is executed. Without an exit condition, you may end up with an infinite loop, which can crash your program.
+
+```python
+# Loop with guaranteed exit condition
+count = 0
+while True:
+    print(count)
+    count += 1
+    if count > 3:
+        break  # Loop stops when count is greater than 3
+
+```
